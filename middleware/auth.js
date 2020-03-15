@@ -1,4 +1,7 @@
 const jwt = require('jsonwebtoken');
+/*
+Middleware route to allow only loggedin users
+*/
 
 const auth = (req, res, next) => {
     const token = req.header("x-auth-token");

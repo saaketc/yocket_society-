@@ -1,3 +1,6 @@
+/*
+Middleware route to allow only authorised committee members 
+*/
 
 const committeeMember = (req, res, next) => {
     const { isCommitteeMember } = req.user;

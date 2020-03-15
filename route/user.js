@@ -3,7 +3,9 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const auth = require('../middleware/auth');
 const Member = require('../model/member');
-    
+ 
+
+// User signup
 router.post('/auth/signup', async (req, res) => {
     try {
         let user = await Member.findOne({ email: req.body.email })
@@ -52,6 +54,7 @@ router.post('/auth/login', async (req, res) => {
         return res.status(500).send(e.message);
     }
 })
+
 // Fetch all committee members
 router.get('/', auth, async (req, res) => {
     try {

@@ -32,7 +32,7 @@ const maintenanceRoute = require('./route/maintenance');
 // routes
 
 app.use(crossDomain); // To set response headers for cross domain talks
-app.use(express.json());
+app.use(express.json()); // To put request into json request body
 app.use('/api/users', userRoute);
 app.use('/api/application', applicationRoute);
 app.use('/api/complaint', complaintRoute);
@@ -40,6 +40,6 @@ app.use('/api/neighbourhood', neighbourhoodRoute);
 app.use('/api/meeting', meetingRoute);
 app.use('/api/feed', feedRoute);
 app.use('/api/maintenance', maintenanceRoute);
-app.use(cors());
+app.use(cors()); // To resolve CORS issue
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));

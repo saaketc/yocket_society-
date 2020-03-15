@@ -5,7 +5,7 @@ const _ = require('lodash');
 const Meeting = require('../model/meeting');
 const Feed = require('../model/newsFeed');
 
-// To create a meeting
+// To schedule a meeting
 router.post('/', auth, committeeMember, async (req, res) => {
     try {
         meeting = new Meeting(_.pick(req.body,
